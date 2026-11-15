@@ -1,0 +1,13 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--ui-space-2);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+:host(.ui-tag--neutral) { background: var(--ui-bg-subtle); color: var(--ui-fg-muted); }
+:host(.ui-tag--accent) { background: color-mix(in srgb, var(--ui-color-accent) 15%, transparent); color: var(--ui-color-accent); }
+:host(.ui-tag--success) { background: color-mix(in srgb, #16a34a 15%, transparent); color: #15803d; }
+:host(.ui-tag--danger) { background: color-mix(in srgb, var(--ui-color-danger) 15%, transparent); color: var(--ui-color-danger); }

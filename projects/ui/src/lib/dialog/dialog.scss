@@ -1,0 +1,11 @@
+// Global styles for the CDK overlay panel/backdrop this library opens.
+.ui-dialog__backdrop { background: rgb(15 23 42 / 0.5); }
+.ui-dialog__panel {
+  background: var(--ui-bg);
+  color: var(--ui-fg);
+  border-radius: var(--ui-radius);
+  padding: var(--ui-space-4);
+  width: min(28rem, calc(100vw - 2rem));
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.18);
+}
+.ui-dialog__panel:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; }

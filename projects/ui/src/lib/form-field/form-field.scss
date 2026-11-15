@@ -1,0 +1,17 @@
+:host { display: grid; gap: var(--ui-space-1); }
+.ui-form-field__label { font-size: 0.875rem; font-weight: 500; color: var(--ui-fg); }
+.ui-form-field__hint { margin: 0; font-size: 0.8125rem; color: var(--ui-fg-muted); }
+.ui-form-field__error { margin: 0; font-size: 0.8125rem; color: var(--ui-color-danger); }
+::ng-deep [uiControl] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius);
+  background: var(--ui-bg);
+  color: var(--ui-fg);
+  font: inherit;
+  min-height: 40px;
+}
+::ng-deep [uiControl][aria-invalid='true'] { border-color: var(--ui-color-danger); }
+::ng-deep [uiControl]:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 1px; }
