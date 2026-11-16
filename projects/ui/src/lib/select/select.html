@@ -1,0 +1,42 @@
+<button
+  #triggerEl
+  type="button"
+  cdkOverlayOrigin
+  #origin="cdkOverlayOrigin"
+  class="ui-select__trigger"
+  role="combobox"
+  aria-haspopup="listbox"
+  [attr.aria-expanded]="open()"
+  [attr.aria-controls]="listboxId"
+  [attr.aria-activedescendant]="activeId"
+  [disabled]="disabled()"
+  (click)="toggle()"
+  (keydown)="onKeydown($event)"
+  (blur)="open() ? null : null"
+>
+  <span [class.ui-select__placeholder]="!selectedLabel">{{ selectedLabel ?? placeholder() }}</span>
+  <span class="ui-select__arrow" aria-hidden="true">▾</span>
+</button>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="origin"
+  [cdkConnectedOverlayOpen]="open()"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+  [cdkConnectedOverlayWidth]="triggerEl.offsetWidth"
+  (backdropClick)="close()"
+  (detach)="close()"
+>
+  <ul [id]="listboxId" role="listbox" class="ui-select__list" (keydown)="onKeydown($event)" tabindex="-1">
+    @for (opt of options(); track opt.value) {
+      <ui-select-option
+        [value]="opt.value"
+        [label]="opt.label"
+        [optionDisabled]="opt.disabled ?? false"
+        [selected]="opt.value === value()"
+        (pick)="selectValue(opt.value)"
+      />
+    }
+  </ul>
+</ng-template>
