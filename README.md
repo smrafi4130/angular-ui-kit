@@ -1,5 +1,7 @@
 # @smrafi/ui — Angular component library
 
+[![CI](https://github.com/smrafi4130/angular-ui-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/smrafi4130/angular-ui-kit/actions/workflows/ci.yml)
+
 An accessible, token-driven Angular 19 component library: **standalone components**, built on **Angular CDK** for overlay/focus behaviour, documented in **Storybook**, packaged with **ng-packagr**, with **light/dark theming** via CSS custom properties.
 
 ![buttons](docs/screenshots/buttons.png)
