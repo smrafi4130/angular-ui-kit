@@ -12,6 +12,7 @@ An accessible, token-driven Angular 19 component library: **standalone component
 | `UiButton` (`button[uiButton]`, `a[uiButton]`) | Attribute selector on a native element, so type/disabled/focus/keyboard come from the platform; variants, sizes and an accessible loading state (`aria-busy` + spinner) layered on via host bindings. |
 | `UiTag` (`ui-tag`) | Status/label pill with tones. |
 | `UiFormField` (`ui-form-field`) + `UiControl` (`[uiControl]`) | Wires label, hint and error to the projected control with generated ids and `aria-describedby` / `aria-invalid`, re-synced reactively with a signal `contentChild` query. |
+| `UiTabs` (`ui-tabs`) + `UiTab` (`ui-tab`) | WAI-ARIA tabs: roving tabindex, arrow/Home/End navigation skipping disabled tabs, `aria-controls`/`aria-labelledby`, two-way `active` model; inactive panels aren't rendered. |
 | `UiDialogService` | Thin wrapper over `@angular/cdk/dialog` with house defaults (focus trap, focus restore, Escape, `aria-modal`, `role="alertdialog"` for destructive confirms). |
 
 ## Design decisions
@@ -40,7 +41,7 @@ import { UiButton, UiDialogService } from '@smrafi/ui';
 Karma + Jasmine, headless Chromium (6 tests): button classes + loading aria; tag tone; **form-field label/hint/error aria wiring** (the a11y contract); dialog opens with `role`/`aria-modal`/`aria-label` and closes. Storybook runs the a11y addon with `test: 'error'`, covering colour contrast that jsdom-less unit tests can't.
 
 ## Trade-offs and limitations
-- **Four components, not a full kit** — enough to show the patterns (attribute-selector components, content projection with aria wiring, CDK overlays, theming) without padding. No Select/Menu/Tabs yet.
+- **Four components, not a full kit** — enough to show the patterns (attribute-selector components, content projection with aria wiring, CDK overlays, theming) without padding. No Select/Menu yet.
 - Theme tokens are shipped as SCSS/CSS; a Figma-tokens pipeline would be the next step.
 - Not published to npm yet; `pnpm build:lib` produces the publishable package in `dist/ui`.
 - Visual regression (Playwright/Chromatic) is a planned addition; today Storybook's a11y addon is the automated visual-quality gate.
