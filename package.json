@@ -62,5 +62,6 @@
       "@parcel/watcher",
       "nice-napi"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.28.0"
 }
