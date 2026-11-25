@@ -45,3 +45,4 @@ Thumbs.db
 
 storybook-static
 docs/screenshots/*.tmp
+projects/ui/documentation.json
