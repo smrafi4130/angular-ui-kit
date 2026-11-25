@@ -14,6 +14,7 @@ An accessible, token-driven Angular 19 component library: **standalone component
 | `UiFormField` (`ui-form-field`) + `UiControl` (`[uiControl]`) | Wires label, hint and error to the projected control with generated ids and `aria-describedby` / `aria-invalid`, re-synced reactively with a signal `contentChild` query. |
 | `UiTabs` (`ui-tabs`) + `UiTab` (`ui-tab`) | WAI-ARIA tabs: roving tabindex, arrow/Home/End navigation skipping disabled tabs, `aria-controls`/`aria-labelledby`, two-way `active` model; inactive panels aren't rendered. |
 | `UiSelect` (`ui-select`) | WAI-ARIA combobox + listbox on **CDK Overlay**, `ActiveDescendantKeyManager` keyboard nav + typeahead with `aria-activedescendant`, implements `ControlValueAccessor` (works with reactive & template forms). |
+| `UiToastService` + `UiToastViewport` | Notifications in a polite live region: `role="status"`/`alert` by tone, auto-dismiss that **pauses on hover/focus** (WCAG 2.2.1), a visible-count cap, signal-based state. |
 | `UiDialogService` | Thin wrapper over `@angular/cdk/dialog` with house defaults (focus trap, focus restore, Escape, `aria-modal`, `role="alertdialog"` for destructive confirms). |
 
 ## Design decisions
